@@ -6,7 +6,7 @@ run docker-php-ext-install pdo pdo_mysql
 WORKDIR /var/www
 RUN rm -rf /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
+COPY . /var/www
 
 
 
@@ -21,5 +21,5 @@ expose 9000
 # Add user for laravel application
 
 # RUN bash -c 'echo -e Instalando as dependencias do'
-# RUN composer update && php artisan key:generate && php artisan config:cache
+RUN php artisan key:generate && php artisan config:cache
 ENTRYPOINT ["php-fpm"]
