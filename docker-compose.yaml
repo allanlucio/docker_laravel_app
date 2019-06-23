@@ -5,7 +5,6 @@ services:
     app:
         # image: allanlucio/laravel_app
         build: .
-
         container_name: app
         entrypoint: ./.docker/app/entrypoint.sh
         environment:
