@@ -13,6 +13,7 @@ WORKDIR /var/www
 RUN rm -rf /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+USER www-data
 RUN ln -s public html
 RUN chown -R www-data /var/www
 RUN chmod -R 775 /var/www
