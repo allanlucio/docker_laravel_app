@@ -25,23 +25,6 @@ Este projeto contem uma configuração básica plug and play de uma estrutura de
 docker-compose up -d
 
 ```
-Após os containers serem criados, o próximo passo é configurar o projeto laravel.
+A configuração foi feita com auxilio do dockerize, com objetivo de simplificar algumas etapas de configuração, com isto é possível definir as variaveis de ambientes dentro do docker-compose.yaml tanto para o <b>app</b> quanto para o <b>nginx</b>. Além disso, a execução dos comandos de startup do container, bem como a definição espera para subí-lo apenas quando os serviços que possui dependêcia estiverem prontos estão localizados no arquivo <b>./.docker/.app/entrypoint.sh</b>.
 
-## Configuração do laravel
-```
-
-//Instalando as dependencias do projeto
-docker exec -it app composer install
-
-//Gerando a chave
-docker exec -it app php artisan key:generate
-
-//Realizar migrações do banco de dados
-docker exec -it app php artisan migrate
-
-//Caso deseje acessar o container para alguma configuração extra
-docker exec -it app bash 
-
-
-```
 
