@@ -7,3 +7,6 @@ dockerize -wait tcp://db:3306 -timeout 40s
 php artisan migrate
 chown -R www-data:www-data /var/www
 php-fpm
+
+
+
